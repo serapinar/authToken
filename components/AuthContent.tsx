@@ -16,7 +16,7 @@ export default function AuthContent({isLogin}) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#75a9a1',
+    backgroundColor: '#e9a1b5',
     marginTop: 50,
     marginHorizontal: 30,
     padding: 15,
