@@ -92,6 +92,6 @@ export default function AuthForm({ isLogin, onsubmit, credentialsInvalid }) {
 
 const styles = StyleSheet.create({
   buttons: {
-    marginTop: 10
-  }
+    marginTop: 10,
+  },
 });
