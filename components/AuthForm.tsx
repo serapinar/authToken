@@ -36,7 +36,6 @@ export default function AuthForm({ isLogin, onsubmit, credentialsInvalid }) {
       case "email":
         setEnteredEmail(enteredValue);
         break;
-
       case "password":
         setEnteredPassword(enteredValue);
         break;
