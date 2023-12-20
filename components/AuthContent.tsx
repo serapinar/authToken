@@ -1,14 +1,27 @@
-import {StyleSheet, View} from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import AuthForm from './AuthForm';
 import ButtonWhite from './ButtonWhite';
+import { useNavigation } from '@react-navigation/native';
 
-export default function AuthContent({isLogin}) {
+export default function AuthContent({ isLogin }) {
+  const navigation = useNavigation();
+
+  function switchScreen() {
+    if (isLogin) {
+      navigation.navigate('Signup');
+    } else {
+      navigation.navigate('Login');
+    }
+  }
+
   return (
     <View style={styles.container}>
       <AuthForm isLogin={isLogin} />
       <View>
-        <ButtonWhite>{isLogin ? 'Sign Up' : 'Login'}</ButtonWhite>
+        <ButtonWhite onPress={switchScreen}>
+          {isLogin ? 'Sign up' : 'Login'}
+        </ButtonWhite>
       </View>
     </View>
   );
@@ -16,14 +29,14 @@ export default function AuthContent({isLogin}) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#e9a1b5',
+    backgroundColor: '#63bdac',
     marginTop: 50,
     marginHorizontal: 30,
     padding: 15,
     borderRadius: 20,
     elevation: 4,
     shadowColor: 'black',
-    shadowOffset: {width: 1, height: 2},
+    shadowOffset: { width: 1, height: 2 },
     shadowOpacity: 0.5,
     shadowRadius: 4,
   },
