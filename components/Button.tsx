@@ -1,12 +1,11 @@
-import { StyleSheet, Text, View, Pressable } from "react-native";
-import React from "react";
+import {StyleSheet, Text, View, Pressable} from 'react-native';
+import React from 'react';
 
-export default function Button({ children, onPress }) {
+export default function Button({children, onPress}) {
   return (
     <Pressable
-      style={({ pressed }) => [styles.button, pressed && styles.pressed]}
-      onPress={onPress}
-    >
+      style={({pressed}) => [styles.button, pressed && styles.pressed]}
+      onPress={onPress}>
       <View>
         <Text style={styles.text}>{children}</Text>
       </View>
@@ -16,17 +15,17 @@ export default function Button({ children, onPress }) {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "#2d655b",
+    backgroundColor: '#2d655b',
     paddingVertical: 10,
-    borderRadius: 20
+    borderRadius: 20,
   },
   pressed: {
-    opacity: 0.5
+    opacity: 0.5,
   },
   text: {
-    textAlign: "center",
-    color: "white",
+    textAlign: 'center',
+    color: 'white',
     fontSize: 16,
-    fontWeight: "bold"
-  }
+    fontWeight: 'bold',
+  },
 });

@@ -1,9 +1,24 @@
-import {StyleSheet} from 'react-native';
-import React from 'react';
+import {Alert} from 'react-native';
+import React, {useState} from 'react';
 import AuthContent from '../components/AuthContent';
+import {login} from '../util/auth';
+import Loading from '../components/Loading.tsx';
 
 export default function LoginScreen() {
-  return <AuthContent isLogin />;
-}
+  const [isAuthanticating, setIsAuthanticating] = useState(false);
 
-const styles = StyleSheet.create({});
+  async function loginHandler({email, password}) {
+    setIsAuthanticating(true);
+    try {
+      await login(email, password);
+    } catch (error) {
+      Alert.alert('Login Failed! Please check your answers...');
+    }
+    setIsAuthanticating(false);
+  }
+
+  if (isAuthanticating) {
+    return <Loading message="Signing in..." />;
+  }
+  return <AuthContent isLogin onAuthenticate={loginHandler} />;
+}
