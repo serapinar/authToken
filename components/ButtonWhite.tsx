@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View, Pressable } from 'react-native';
-import React from 'react';
+import { StyleSheet, Text, View, Pressable } from "react-native";
+import React from "react";
 
 export default function ButtonWhite({ children, onPress }) {
   return (
@@ -17,14 +17,14 @@ export default function ButtonWhite({ children, onPress }) {
 const styles = StyleSheet.create({
   button: {
     paddingVertical: 10,
-    borderRadius: 20,
+    borderRadius: 20
   },
   pressed: {
-    opacity: 0.5,
+    opacity: 0.5
   },
   text: {
-    textAlign: 'center',
-    color: 'white',
-    fontWeight: 'bold',
-  },
+    textAlign: "center",
+    color: "white",
+    fontWeight: "bold"
+  }
 });

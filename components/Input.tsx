@@ -1,7 +1,7 @@
-import { StyleSheet, Text, View, TextInput } from "react-native";
-import React from "react";
+import {StyleSheet, Text, View, TextInput} from 'react-native';
+import React from 'react';
 
-export default function Input({ label, keyboardType, onUpdateValue, value, secure }) {
+export default function Input({label,keyboardType, onUpdateValue, value, secure, isInvalid }) {
   return (
     <View style={styles.inputContainer}>
       <Text style={styles.label}>{label}</Text>
@@ -22,11 +22,11 @@ const styles = StyleSheet.create({
     marginVertical: 8,
   },
   label: {
-    color: "white",
+    color: 'white',
     marginBottom: 3,
   },
   input: {
-    backgroundColor: "#dfeae7",
+    backgroundColor: '#dfeae7',
     paddingVertical: 8,
     paddingHorizontal: 10,
     borderRadius: 20,
