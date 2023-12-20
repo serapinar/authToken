@@ -1,9 +1,9 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {StyleSheet} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import LoginScreen from './screens/LoginScreen';
 import SignupScreen from './screens/SignupScreen';
+import AuthContextProvider from './store/auth-context.tsx';
 
 const Stack = createNativeStackNavigator();
 
@@ -39,9 +39,11 @@ function NormalStack() {
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <NormalStack />
-    </NavigationContainer>
+    <AuthContextProvider>
+      <NavigationContainer>
+        <NormalStack />
+      </NavigationContainer>
+    </AuthContextProvider>
   );
 }
 

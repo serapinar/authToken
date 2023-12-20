@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View, Alert} from 'react-native';
+import {StyleSheet, View, Alert} from 'react-native';
 import React, {useState} from 'react';
 import AuthForm from './AuthForm';
 import ButtonWhite from './ButtonWhite';
@@ -37,7 +37,7 @@ export default function AuthContent({isLogin, onAuthenticate}) {
       });
       return;
     }
-    onAuthenticate ({email, password})
+    onAuthenticate({email, password});
   }
 
   function switchScreen() {
