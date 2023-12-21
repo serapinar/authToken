@@ -6,6 +6,8 @@ import HomeScreen from './screens/HomeScreen';
 import {useContext} from 'react';
 import SignupScreen from './screens/SignupScreen';
 import AuthContextProvider, {AuthContext} from './store/auth-context';
+import { Pressable, StyleSheet, Text } from "react-native";
+
 
 const Stack = createNativeStackNavigator();
 
@@ -39,6 +41,7 @@ function NormalStack() {
   );
 }
 function AfterAuthenticatedStack() {
+  const authContext = useContext(AuthContext);
   return (
     <Stack.Navigator
       screenOptions={{
@@ -55,6 +58,11 @@ function AfterAuthenticatedStack() {
         component={HomeScreen}
         options={{
           headerTitle: 'HomePage',
+          headerRight: ()=>(
+            <Pressable style={({pressed})=> pressed && styles.pressed} onPress={authContext.logout}>
+              <Text>turn</Text>
+            </Pressable>
+          ),
         }}
       />
     </Stack.Navigator>
@@ -78,3 +86,8 @@ export default function App() {
     </AuthContextProvider>
   );
 }
+const styles= StyleSheet.create ({
+  pressed:{
+    opacity:0.5
+  },
+})
