@@ -21,5 +21,5 @@ export function createUser(email, password) {
 }
 
 export function login(email, password) {
-  return authenticate('SignInWithPassword', email, password);
+  return authenticate('signInWithPassword', email, password);
 }
