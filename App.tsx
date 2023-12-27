@@ -16,7 +16,7 @@ function NormalStack() {
     <Stack.Navigator
       screenOptions={{
         headerStyle: {
-          backgroundColor: '#63bdac',
+          backgroundColor: '#84e8d5',
         },
         headerTintColor: 'white',
         contentStyle: {
