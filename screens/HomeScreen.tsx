@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet,Text, View} from 'react-native';
+import { StyleSheet, Text, View } from "react-native";
 
 export default function HomeScreen() {
   return (
@@ -7,6 +7,7 @@ export default function HomeScreen() {
       <Text style={styles.title}>Welcome to HomeScreen</Text>
       <Text> Congratulations!!! </Text>
       <Text>You have successfully logged in</Text>
+
     </View>
   );
 }
