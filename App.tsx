@@ -9,37 +9,55 @@ import AuthContextProvider, {AuthContext} from './store/auth-context';
 import {Pressable, StyleSheet} from 'react-native';
 import {ArrowRightIcon, HomeIcon} from 'react-native-heroicons/solid';
 import CategoriesScreen from './screens/CategoriesScreen.tsx';
-import FavoritesScreen from "./screens/FavoritesScreen.tsx";
-import CampaignsScreen from "./screens/CampaignsScreen.tsx";
+import FavoritesScreen from './screens/FavoritesScreen.tsx';
+import CampaignsScreen from './screens/CampaignsScreen.tsx';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import BasketScreen from "./screens/BasketScreen.tsx";
-import { HeartIcon, MegaphoneIcon, ShoppingCartIcon, Squares2X2Icon } from "react-native-heroicons/mini";
+import BasketScreen from './screens/BasketScreen.tsx';
+import {
+  HeartIcon,
+  MegaphoneIcon,
+  ShoppingCartIcon,
+  Squares2X2Icon,
+} from 'react-native-heroicons/mini';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
 function NormalTab() {
-
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      screenOptions={{
+        headerStyle: {backgroundColor: '#84e8d5'},
+        headerTintColor: 'white',
+      }}
+    >
       <Tab.Screen
-        name="User"
+        name="Userrr"
         component={HomeScreen}
         options={{
+          headerShown: false,
           tabBarLabel: 'Home',
           tabBarIcon: () => (<HomeIcon name="home" color={'pink'} size={22} />),
         }}
       />
-      <Tab.Screen name="Categories" component={CategoriesScreen} options={{
-        tabBarLabel: 'Categories',
-        tabBarIcon: () => (<Squares2X2Icon name="categories" color={'pink'} size={22} />),
-      }} />
+      <Tab.Screen
+        name="Categories"
+        component={CategoriesScreen}
+        options={{
+          tabBarLabel: 'Categories',
+          tabBarIcon: () => (
+            <Squares2X2Icon name="categories" color={'pink'} size={22} />
+          ),
+        }}
+      />
       <Tab.Screen
         name="Basket"
         component={BasketScreen}
         options={{
           tabBarLabel: 'Basket',
-          tabBarIcon: () => (<ShoppingCartIcon name="basket" color={'pink'} size={22} />),
+          tabBarIcon: () => (
+            <ShoppingCartIcon name="basket" color={'pink'} size={22} />
+          ),
         }}
       />
       <Tab.Screen
