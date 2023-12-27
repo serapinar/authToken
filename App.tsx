@@ -46,7 +46,7 @@ function AfterAuthenticatedStack() {
     <Stack.Navigator
       screenOptions={{
         headerStyle: {
-          backgroundColor: '#63bdac',
+          backgroundColor: '#699d94',
         },
         headerTintColor: 'white',
         contentStyle: {
