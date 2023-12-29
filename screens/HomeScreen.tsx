@@ -18,13 +18,14 @@ export default function HomeScreen() {
           flexDirection: 'row',
           alignItems: 'center',
           justifyContent: 'space-between',
-          marginHorizontal: 10,
+          marginHorizontal: 7,
+          borderRadius:5
         }}>
         <Image
-          style={{width: 100, height: 45, borderRadius: 15}}
+          style={{width: 100, height: 45, borderRadius: 15, margin:5}}r
           source={require('../asset/images.png')}
         />
-        <Pressable>
+        <Pressable style={{marginLeft: 5}}>
           <UserCircleIcon color="red" size={40} />
         </Pressable>
       </View>
