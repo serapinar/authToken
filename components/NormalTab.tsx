@@ -1,6 +1,6 @@
 import React from 'react';
 import HomeScreen from '../screens/HomeScreen.tsx';
-import {HomeIcon} from 'react-native-heroicons/solid';
+import {ArrowRightIcon, HomeIcon} from 'react-native-heroicons/solid';
 import CategoriesScreen from '../screens/CategoriesScreen.tsx';
 import {
   HeartIcon,
@@ -14,6 +14,7 @@ import CampaignsScreen from '../screens/CampaignsScreen.tsx';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 const Tab = createBottomTabNavigator();
+
 
 export default function NormalTab() {
   return (

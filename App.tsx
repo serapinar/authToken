@@ -2,13 +2,13 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import LoginScreen from './screens/LoginScreen';
-import HomeScreen from './screens/HomeScreen';
 import {useContext} from 'react';
 import SignupScreen from './screens/SignupScreen';
 import AuthContextProvider, {AuthContext} from './store/auth-context';
 import {Pressable, StyleSheet} from 'react-native';
-import {ArrowRightIcon, HomeIcon} from 'react-native-heroicons/solid';
+import {ArrowRightIcon} from 'react-native-heroicons/solid';
 import NormalTab from './components/NormalTab.tsx';
+import UserInfoScreen from './screens/userInfoScreen.tsx';
 
 const Stack = createNativeStackNavigator();
 
@@ -55,19 +55,12 @@ function AfterAuthenticatedStack() {
           backgroundColor: 'white',
         },
       }}>
-      <Stack.Screen name="NormalTab" component={NormalTab} options={{headerShown: false}} />
+      <Stack.Screen name="Home Page" component={NormalTab} options={{headerShown: false}} />
       <Stack.Screen
-        name="Home"
-        component={HomeScreen}
+        name="UserInfo"
+        component={UserInfoScreen}
         options={{
-          headerTitle: 'HomePage',
-          headerRight: () => (
-            <Pressable
-              style={({pressed}) => pressed && styles.pressed}
-              onPress={authContext.logout}>
-              <ArrowRightIcon color="white" size={28} />
-            </Pressable>
-          ),
+          headerTitle: 'User Informations',
         }}
       />
     </Stack.Navigator>

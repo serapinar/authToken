@@ -61,13 +61,14 @@ export default function AuthForm({isLogin, onsubmit, credentialsInvalid}) {
         <Input
           label="Confirm Email"
           keyboardType="email-address"
-          onUpdateValue={updateInput.bind(this, "confirmEmail")}
+          onUpdateValue={updateInput.bind(this, 'confirmEmail')}
           value={enteredConfirmEmail}
           isInvalid={emailsDontMatch}
         />
       )}
       <Input
         label="Password"
+        keyboardType="numeric"
         secure
         onUpdateValue={updateInput.bind(this, 'password')}
         value={enteredPassword}
@@ -76,6 +77,7 @@ export default function AuthForm({isLogin, onsubmit, credentialsInvalid}) {
       {!isLogin && (
         <Input
           label="Confirm Password"
+          keyboardType="numeric"
           secure
           onUpdateValue={updateInput.bind(this, 'confirmPassword')}
           value={enteredConfirmPassword}
